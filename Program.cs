@@ -145,14 +145,16 @@ namespace csharp_functions
             //Funzione che restituisce il quadrato di ogni elemento presente nell'array che gli viene passato
             int[] ElevaArrayAlQuadrato(int[] array)
             {
-                int val = 0;
+               
                 
                 for (int i = 0; i < array.Length; i++)
                 {
-                    val = array[i] * array[i];
+                    int val = array[i] * array[i];
 
                     //inserisco il valore digitato nella posizione i-esima del mio array
                     nuovoArray[i] = val;
+
+                    val = 0;
 
                 }
 
