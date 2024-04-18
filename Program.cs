@@ -52,7 +52,7 @@ namespace csharp_functions
 
           
 
-            //Dichiaro un array iniziale di quattro elementi
+            //Dichiaro un array iniziale di tot elementi(grandezza sulla base della grandezza del valore dell'array iniziale)
             int[] nuovoArray = new int[startArray.Length];
 
             int somma = 0;
