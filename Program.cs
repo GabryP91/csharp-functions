@@ -94,16 +94,19 @@ namespace csharp_functions
                 for (int i = 0; i < numero; i++)
                 {
                     Console.WriteLine("Inserisci valore");
+
                     //controllo sull'input dell'utente, se quello che è stato digitato non è un numero darà errore
                     while (int.TryParse(Console.ReadLine(), out elemento) == false)
                     {
                         Console.WriteLine("Sintassi errata. Inserisci numero");
                     }
 
+                    //inserisco il valore digitato nella posizione i-eseima del mio array
                     inizioArray[i] = elemento;
 
                 }
 
+                //restituisco l'array
                 return inizioArray;
             }
 
