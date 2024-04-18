@@ -101,7 +101,7 @@ namespace csharp_functions
                         Console.WriteLine("Sintassi errata. Inserisci numero");
                     }
 
-                    //inserisco il valore digitato nella posizione i-eseima del mio array
+                    //inserisco il valore digitato nella posizione i-esima del mio array
                     inizioArray[i] = elemento;
 
                 }
@@ -150,11 +150,13 @@ namespace csharp_functions
                 for (int i = 0; i < array.Length; i++)
                 {
                     val = array[i] * array[i];
-                  
+
+                    //inserisco il valore digitato nella posizione i-esima del mio array
                     nuovoArray[i] = val;
 
                 }
 
+                //restituisco l'array
                 return nuovoArray;
             }
 
