@@ -40,7 +40,7 @@ namespace csharp_functions
 
             int valore;
 
-            Console.WriteLine("Inserisci numero");
+            Console.WriteLine("Digitare lunghezza array");
             //controllo sull'input dell'utente, se quello che è stato digitato non è un numero darà errore
             while (int.TryParse(Console.ReadLine(), out valore) == false)
             {
@@ -89,10 +89,18 @@ namespace csharp_functions
             {
                 int[] inizioArray = new int[numero];
 
+                int elemento;
+
                 for (int i = 0; i < numero; i++)
                 {
+                    Console.WriteLine("Inserisci valore");
+                    //controllo sull'input dell'utente, se quello che è stato digitato non è un numero darà errore
+                    while (int.TryParse(Console.ReadLine(), out elemento) == false)
+                    {
+                        Console.WriteLine("Sintassi errata. Inserisci numero");
+                    }
 
-                    inizioArray[i] = i;
+                    inizioArray[i] = elemento;
 
                 }
 
