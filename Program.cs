@@ -72,11 +72,15 @@ namespace csharp_functions
             //richiamo funzione ElevaArrayAlQuadrato e immagazzino il nuovo array
             nuovoArray = ElevaArrayAlQuadrato(startArray);
 
+            Console.WriteLine("\nIl vecchio array è:");
+
+            StampaArray(startArray);
+
             Console.WriteLine("\nIl nuovo array avrà i seguenti elementi:");
 
             StampaArray(nuovoArray);
 
-
+            
             Console.WriteLine();
 
             Console.WriteLine($"\nLa somma dei vari elementi del primo array sarà:{somma = sommaElementiArray(startArray)}");
