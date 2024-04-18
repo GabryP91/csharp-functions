@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -172,6 +173,109 @@ namespace csharp_functions
                 }
                 return somma;
             }
+
+
+
+
+            /*
+             * ********************PARTE AGGIUNTIVA *******************************
+
+
+            Scrivere un piccolo programma che esegue le seguenti funzioni: 
+            (Si inserisca ogni funzionalità in uno o più metodi a seconda delle necessità)
+
+
+            - Permette di Calcolare l'area di un cerchio  (I numeri sono in virgola quindi attenzione.)
+            - Converta i gradi da Celsius a Farenheit 
+            - Verificare se il numero fornito in input è un numero primo o no
+            - Concatenare due stringhe date in ingresso (BONUS: Permettere all'utente anche di scegliere il carattere per la concatenazione)
+            - Verificare se una parola data in input è palindroma (HELP: la funzione Equals delle stringhe ci può aiutare)
+
+            */
+
+
+            Console.WriteLine("\n\n**** PARTE OPZIONALE ***\n\n");
+            
+            //dichiarazione valori
+            double valore2,valore3;
+
+            int val1=0;
+
+
+            Console.WriteLine("Inserisci il raggio del cerchio:");
+            //controllo sull'input dell'utente, se quello che è stato digitato non è un numero darà errore
+            while (double.TryParse(Console.ReadLine(), out valore2) == false)
+            {
+                Console.WriteLine("Sintassi errata. Inserisci numero");
+            }
+
+            double areaCerchio = CalcolaAreaCerchio(valore2);
+
+            Console.WriteLine($"L'area del cerchio con raggio {valore2} è {areaCerchio}");
+
+
+            Console.WriteLine("Inserisci temperatura in Celsius:");
+            //controllo sull'input dell'utente, se quello che è stato digitato non è un numero darà errore
+            while (double.TryParse(Console.ReadLine(), out valore3) == false)
+            {
+                Console.WriteLine("Sintassi errata. Inserisci numero");
+            }
+
+            double ConvertCtoT = ConvertiCelsiusToFahrenheit(valore3);
+            Console.WriteLine($"La temperatura {valore3}°C corrisponde a {ConvertCtoT}°F");
+
+
+            Console.WriteLine("Inserisci un valore:");
+            //controllo sull'input dell'utente, se quello che è stato digitato non è un numero darà errore
+            while (int.TryParse(Console.ReadLine(), out val1) == false)
+            {
+                Console.WriteLine("Sintassi errata. Inserisci numero");
+            }
+
+            
+            bool result = CeckVal(val1);
+
+            if(result == true)
+                Console.WriteLine($"Il numero {val1} è primo");
+            else
+                Console.WriteLine($"Il numero {val1} non è primo");
+
+
+            //Funzione per calcolare area cerchio
+            double CalcolaAreaCerchio(double raggio)
+            {
+                return Math.PI * (raggio*raggio);
+            }
+
+            //Funzione per calcolare area cerchio
+            double ConvertiCelsiusToFahrenheit(double temp)
+            {
+                return (temp * 9) / 5 + 32;
+
+            }
+
+            //Funzione per calcolare se il numero passato è primo o no
+            bool CeckVal(int numero)
+            {
+                //se il numero passato è uno o minore
+                if (numero <= 1)
+                    return false;
+
+
+                // ciclo partendo da 2 fino alla radice del numero passato
+                for (int i = 2; i <= Math.Sqrt(numero); i++)
+                {
+                    //se il numero passato è divisibile per l'iesimo valore
+                    if (numero % i == 0)
+                        return false;
+                }
+
+                return true;
+
+            }
+
+
+
 
 
 
