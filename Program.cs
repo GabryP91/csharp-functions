@@ -199,6 +199,8 @@ namespace csharp_functions
             //dichiarazione valori
             double valore2,valore3;
 
+            string word;
+
             int val1=0;
 
 
@@ -232,7 +234,6 @@ namespace csharp_functions
                 Console.WriteLine("Sintassi errata. Inserisci numero");
             }
 
-            
             bool result = CeckVal(val1);
 
             if(result == true)
@@ -240,6 +241,17 @@ namespace csharp_functions
             else
                 Console.WriteLine($"Il numero {val1} non è primo");
 
+
+            Console.WriteLine("Inserisci una stringa:");
+            
+            word = Console.ReadLine();
+
+            bool resultW = StringCheck(word);
+
+            if (resultW == true)
+                Console.WriteLine($"La stringa è palindroma");
+            else
+                Console.WriteLine($"La stringa non è palindroma");
 
             //Funzione per calcolare area cerchio
             double CalcolaAreaCerchio(double raggio)
@@ -272,6 +284,25 @@ namespace csharp_functions
 
                 return true;
 
+            }
+
+            //Funzione per calcolare se il numero passato è primo o no
+            bool StringCheck(string parola)
+            {
+
+                // Inverti la parola
+                string parolaInvertita = "";
+
+                //ciclo for inverso parto dall'ultimo elemento e torno al primo per avere la stringa invertita
+                for (int i = parola.Length - 1; i >= 0; i--)
+                {
+                    parolaInvertita += parola[i];
+                }
+
+                // Confronta la parola 
+                return parola.Equals(parolaInvertita, StringComparison.OrdinalIgnoreCase);
+
+              
             }
 
 
