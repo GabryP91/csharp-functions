@@ -286,7 +286,7 @@ namespace csharp_functions
 
             }
 
-            //Funzione per calcolare se il numero passato è primo o no
+            //Funzione per calcolare se la stringa passata è palindroma o no
             bool StringCheck(string parola)
             {
 
